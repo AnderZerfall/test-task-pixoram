@@ -11,6 +11,16 @@
       color: variables.$primary;
     }
   }
+  &__list {
+      display: flex;
+      gap: variables.$gap;
+      justify-content: center;
+      align-items: center;
+  }
+
+  &__item {
+    position: relative;
+  }
 }
 
 .header {
@@ -38,14 +48,5 @@
     font-weight: 800;
     font-size: variables.$logo-size;
     color: variables.$primary;
-  }
-}
-
-.nav {
-  &__list {
-    display: flex;
-    gap: variables.$gap;
-    justify-content: center;
-    align-items: center;
   }
 }

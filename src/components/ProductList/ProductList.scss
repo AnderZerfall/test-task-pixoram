@@ -16,6 +16,11 @@
   align-items: center;
   justify-content: center;
   gap: variables.$gap;
+  
+
+  .previous, .next {
+    cursor: pointer;
+  }
 
   &__item {
     background-color: variables.$card-bg;
@@ -31,6 +36,7 @@
 
     &:hover {
       border: variables.$border-thickness solid variables.$primary;
+      cursor: pointer;
     }
   }
 

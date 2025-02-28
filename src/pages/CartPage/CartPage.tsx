@@ -1,6 +1,6 @@
 import { Product } from '../../domain/models/Product';
 import React, { useEffect, useState } from 'react';
-import { CART_UPDATE_EVENT, GetFromCart } from '../../utils/sessionStorageHelper';
+import { CART_UPDATE_EVENT, getFromCart } from '../../utils/sessionStorageHelper';
 import { ErrorType } from '../../domain/models/ErrorType';
 import { ProductList } from '../../components/ProductList/ProductList';
 
@@ -10,12 +10,12 @@ export const CartPage = () => {
 
   useEffect(() => {
     setLoading(true);
-    setCart(GetFromCart());
+    setCart(getFromCart());
     setLoading(false);
-    addEventListener(CART_UPDATE_EVENT, () => setCart(GetFromCart()));
+    addEventListener(CART_UPDATE_EVENT, () => setCart(getFromCart()));
 
     return () =>
-      removeEventListener(CART_UPDATE_EVENT, () => setCart(GetFromCart()));
+      removeEventListener(CART_UPDATE_EVENT, () => setCart(getFromCart()));
   }, []);
 
   return (

@@ -6,9 +6,9 @@ import React, {
 import { Product } from '../../domain/models/Product';
 import './ProductCard.scss';
 import {
-  GetFromCart,
-  RemoveFromCart,
-  SaveToCart,
+  getFromCart,
+  removeFromCart,
+  saveToCart,
 } from '../../utils/sessionStorageHelper';
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
@@ -21,7 +21,7 @@ const ProductCard: React.FC<Props> = React.memo(({ product }) => {
   const [isInCart, setIsInCart] = useState(false);
 
   useEffect(() => {
-    const cart = GetFromCart();
+    const cart = getFromCart();
 
     setIsInCart(cart.some((item) => item.id === product.id));
   }, [product]);
@@ -29,11 +29,11 @@ const ProductCard: React.FC<Props> = React.memo(({ product }) => {
   const handleCartButtonClick = useCallback(() => {
     switch (isInCart) {
     case true:
-      RemoveFromCart(product);
+      removeFromCart(product);
       setIsInCart(false);
       break;
     case false:
-      SaveToCart(product);
+      saveToCart(product);
       setIsInCart(true);
       break;
     }

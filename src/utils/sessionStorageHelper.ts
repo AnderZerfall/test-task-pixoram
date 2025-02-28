@@ -3,9 +3,9 @@ import { Product } from 'domain/models/Product';
 export const CART_UPDATE_EVENT = 'cartUpdate';
 const CART_STORAGE_KEY = 'cart';
 
-export const SaveToCart = (product: Product) => {
+export const saveToCart = (product: Product) => {
   try {
-    const cart = GetFromCart();
+    const cart = getFromCart();
 
     cart.push(product);
     sessionStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
@@ -15,7 +15,7 @@ export const SaveToCart = (product: Product) => {
   }
 };
 
-export const GetFromCart = (): Product[] => {
+export const getFromCart = (): Product[] => {
   try {
     const cart = sessionStorage.getItem(CART_STORAGE_KEY);
 
@@ -29,9 +29,9 @@ export const GetFromCart = (): Product[] => {
   return [];
 };
 
-export const RemoveFromCart = (product: Product) => {
+export const removeFromCart = (product: Product) => {
   try {
-    const cart = GetFromCart();
+    const cart = getFromCart();
     const newCart = cart.filter((cartProduct) => cartProduct.id !== product.id);
     
     sessionStorage.setItem(CART_STORAGE_KEY, JSON.stringify(newCart));
