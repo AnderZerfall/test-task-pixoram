@@ -11,7 +11,7 @@ export const saveToCart = (product: Product) => {
     sessionStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
     window.dispatchEvent(new Event(CART_UPDATE_EVENT));
   } catch {
-    console.error('Error saving to cart');
+    console.debug('Error saving to cart');
   }
 };
 
@@ -23,7 +23,7 @@ export const getFromCart = (): Product[] => {
       return JSON.parse(cart);
     }
   } catch {
-    console.error('Error getting from cart');
+    console.debug('Error getting from cart');
   }
 
   return [];
@@ -37,6 +37,6 @@ export const removeFromCart = (product: Product) => {
     sessionStorage.setItem(CART_STORAGE_KEY, JSON.stringify(newCart));
     window.dispatchEvent(new Event(CART_UPDATE_EVENT));
   } catch {
-    console.error('Error getting from cart');
+    console.debug('Error removing from cart');
   }
 };
