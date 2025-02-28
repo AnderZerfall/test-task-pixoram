@@ -1,0 +1,51 @@
+@use '../../styles/variables.scss' as variables;
+
+.nav {
+  &__link {
+    text-decoration: none;
+    color: variables.$text-color;
+    font-weight: variables.$font-weight-subtitle;
+    transition: variables.$animation-settings;
+
+    &:hover {
+      color: variables.$primary;
+    }
+  }
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: variables.$gap 0;
+  background-color: variables.$card-bg;
+
+  &__nav {
+    display: flex;
+
+    & .is-active {
+      color: variables.$primary;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-weight: 800;
+    font-size: variables.$logo-size;
+    color: variables.$primary;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: variables.$gap;
+    justify-content: center;
+    align-items: center;
+  }
+}

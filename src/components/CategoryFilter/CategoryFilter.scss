@@ -1,0 +1,58 @@
+@use '../../styles/variables.scss' as variables;
+
+.category-filter {
+  position: relative;
+  max-width: variables.$product-card-width;
+
+  &__select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: variables.$button-height;
+    border: variables.$border-thickness solid transparent;
+    border-radius: variables.$small-border-radius;
+    padding: 0 variables.$gap;
+    background-color: variables.$card-bg;
+    color: variables.$text-color;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    transition: variables.$animation-settings;
+
+    & option {
+      padding: 20px;
+      background-color: variables.$card-bg;
+      border: variables.$border-thickness solid variables.$primary;
+      font-size: 16px;
+    }
+
+    &:hover {
+      border: variables.$border-thickness solid variables.$primary;
+
+      & ~ .category-filter__icon {
+        color: variables.$primary;
+      }
+    }
+
+    &:focus {
+      border-color: variables.$primary;
+      outline: none;
+
+      & ~ .category-filter__icon {
+        transform: translateY(-50%) scaleY(-1);
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: variables.$gap;
+    transition: variables.$animation-settings;
+    transform: translateY(-50%) scaleY(1);
+  }
+}

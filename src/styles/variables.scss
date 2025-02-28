@@ -1,0 +1,48 @@
+// BREAKPOINTS
+$breakpoint-sm: 576px;
+$breakpoint-md: 640px;
+$breakpoint-lg: 900px;
+$breakpoint-xl: 1199px;
+
+
+//FONTS
+$font-family: 'Inter', sans-serif;
+$font-size: 1rem;
+$logo-size: 1.5rem;
+$font-size-subtitle: 2rem;
+$font-size-title: 3rem;
+$font-size-giant: 4rem;
+$font-weight-title: 600;
+$font-weight-subtitle: 500;
+$font-line-height: 1.25; 
+
+// COLORS
+$bg-color: #EFF5FF;
+$card-bg: #FFFFFF;
+$primary: #4b9cfa;
+$button-text-color: #FFFFFF;
+$text-color: #363842;
+$text-color-secondary: #81859C;
+
+// SIZES
+$container-desktop: 1199px;
+$image-max-width: 300px;
+$product-card-width: 272px;
+$border-radius: 1.5rem;
+$small-border-radius: 0.8rem;
+$header-height: 80px;
+$button-height: 56px;
+$icon-size: 32px;
+$border-thickness: 2px;
+
+
+// MARGINS, GAPS, PADDINGS
+$small-gap: 0.5rem;
+$gap: 1.25rem;
+$big-gap: 2rem;
+// $button-gap: 1rem;
+
+//ANIMATIONS
+$animation-settings: all ease-in-out 0.2s;
+$animation-scale: scale(1.05);
+

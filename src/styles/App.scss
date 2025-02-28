@@ -1,0 +1,101 @@
+@use './variables.scss' as variables;
+@use 'sass:color';
+@use './normalize.css';
+@use './reset.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+html {
+  font-family: variables.$font-family;
+  font-size: variables.$font-size;
+  color: variables.$text-color;
+}
+
+body {
+  background-color: variables.$bg-color;
+  line-height: variables.$font-line-height;
+}
+
+body, #root, .wrapper {
+  min-height: 100vh;
+}
+
+#root {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: variables.$big-gap;
+}
+
+.main {
+  flex: 1;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 90%;
+
+  @media (min-width: variables.$breakpoint-xl) {
+    max-width: variables.$container-desktop;
+  }
+}
+
+
+
+.title-block {
+  padding: variables.$big-gap 0;
+}
+
+.title {
+  font-weight: variables.$font-weight-title;
+  font-size: variables.$font-size-title;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  height: variables.$button-height;
+  padding: 0 variables.$small-gap;
+  border-radius: variables.$small-border-radius;
+  color: variables.$button-text-color;
+  transition: variables.$animation-settings;
+  font-weight: variables.$font-weight-subtitle;
+
+  &__icon {
+    width: variables.$icon-size;
+  }
+
+  &--primary {
+    background-color: variables.$primary;
+  }
+
+  &:hover {
+    background-color: color.adjust(variables.$primary, $lightness: -10%);
+    transform: variables.$animation-scale;
+  }
+
+  &:active {
+    transform: scale(0.7);
+  }
+
+  &--checked {
+    background-color: variables.$card-bg;
+    border: variables.$border-thickness solid variables.$primary;
+
+    &:hover {
+      background-color: variables.$bg-color
+    }
+  }
+}

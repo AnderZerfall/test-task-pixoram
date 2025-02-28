@@ -1,0 +1,15 @@
+@use '../variables.scss' as variables;
+
+@mixin product-grid() {
+  display: flex;
+  flex-direction: column;
+  gap: variables.$gap;
+
+  @media (min-width: variables.$breakpoint-md) {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(variables.$product-card-width, 1fr)
+    );
+  }
+}

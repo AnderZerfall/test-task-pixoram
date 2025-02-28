@@ -1,0 +1,7 @@
+@use '../../styles/variables.scss' as variables;
+
+.product-page {
+  &__filters {
+    margin-bottom: variables.$big-gap;
+  }
+}

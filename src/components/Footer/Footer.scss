@@ -1,0 +1,10 @@
+@use '../../styles/variables.scss' as variables;
+
+.footer {
+  padding: variables.$big-gap;
+  background-color: variables.$card-bg;
+  &__credits {
+    color: variables.$primary;
+    text-align: center;
+  }
+}

@@ -1,0 +1,13 @@
+@use '../../styles/variables.scss' as variables;
+@use '../../styles/mixins/mixins.scss' as mixins;
+
+.skeleton-loader {
+  @include mixins.product-grid;
+
+  & * {
+    border-radius: variables.$border-radius;
+    height: variables.$image-max-width;
+    background-color: variables.$primary;
+    opacity: 0.2;
+  }
+}

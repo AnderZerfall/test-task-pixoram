@@ -1,0 +1,41 @@
+@use '../../styles/variables.scss' as variables;
+@use '../../styles/mixins/mixins.scss' as mixins;
+
+.products {
+  @include mixins.product-grid;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: variables.$big-gap;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: variables.$gap;
+
+  &__item {
+    background-color: variables.$card-bg;
+    border-radius: 100%;
+    width: variables.$icon-size;
+    height: variables.$icon-size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: variables.$border-thickness solid transparent;
+    transition: variables.$animation-settings;
+
+    &:hover {
+      border: variables.$border-thickness solid variables.$primary;
+    }
+  }
+
+  .active {
+    background-color: variables.$primary;
+    color: variables.$button-text-color;
+  }
+}

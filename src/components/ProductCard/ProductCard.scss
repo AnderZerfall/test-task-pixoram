@@ -1,0 +1,65 @@
+@use '../../styles/variables.scss' as variables;
+
+.product-card {
+  position: relative;
+  min-width: variables.$product-card-width;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: variables.$gap;
+  background-color: variables.$card-bg;
+  border-radius: variables.$border-radius;
+  transition: variables.$animation-settings;
+  height: 100%;
+
+  &:hover {
+    transform: variables.$animation-scale;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: variables.$small-gap;
+  }
+
+  &__buy-info {
+    margin-top: variables.$big-gap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+  }
+
+  &__title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    min-height: calc(#{variables.$font-line-height} * 2);
+    font-weight: variables.$font-weight-subtitle;
+        text-transform: uppercase;
+  }
+
+    &__price {
+      font-weight: variables.$font-weight-title;
+      font-size: variables.$font-size-subtitle;
+      text-align: right;
+    }
+
+  &__image {
+    width: 100%;
+    object-fit: contain;
+    height: 200px;
+    margin-bottom: variables.$gap;
+  }
+
+  &__category {
+    color: variables.$text-color-secondary;
+    text-transform: capitalize;
+  }
+
+  &__button {
+    width: variables.$button-height;
+  }
+}
