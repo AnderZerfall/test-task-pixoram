@@ -2,7 +2,7 @@
 
 ![](https://imgur.com/Tj3ohT6.gif)
 
-### See DEMO here: https://fukuro-kanban.netlify.app/
+### See DEMO here: https://pixoram-test-task.netlify.app/
 
 Hello there! Hope you have a nice day!
 I'm Anna or Fukuro. and I'm happy to present to you what I've created!
