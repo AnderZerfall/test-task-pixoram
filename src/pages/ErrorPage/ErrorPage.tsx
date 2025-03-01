@@ -10,8 +10,10 @@ import './ErrorPage.scss';
 export const ErrorPage: React.FC<Props> = ({ error }) => {
   const getImage = useMemo(() => {
     switch (error) {
-    case ErrorType.NOT_FOUND:
+    case ErrorType.PAGE_NOT_FOUND:
       return 'not_found';
+    case ErrorType.PRODUCT_NOT_FOUND:
+      return 'product_not_found';
     case ErrorType.EMPTY_CART:
       return 'empty_cart';
     case ErrorType.REQUEST_ERROR:

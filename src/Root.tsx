@@ -18,7 +18,7 @@ export const Root = () => {
           <Route index element={<ProductsPage />} />
           <Route path="products" element={<ProductsPage />} />
           <Route path="cart" element={<CartPage />} />
-          <Route path="*" element={<ErrorPage error={ErrorType.NOT_FOUND} />} />
+          <Route path="*" element={<ErrorPage error={ErrorType.PAGE_NOT_FOUND} />} />
         </Route>
       </Routes>
     </Router>

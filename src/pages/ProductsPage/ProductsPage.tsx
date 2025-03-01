@@ -8,15 +8,15 @@ import React, {
 } from 'react';
 import './ProductsPage.scss';
 import { CategoryFilter } from '../../components/CategoryFilter/CategoryFilter';
-import { CategoryContext } from '../../context/CategoryContext';
-import { filterProductsByCategory } from '../../utils/filterHelper';
 import { ErrorType } from '../../domain/models/ErrorType';
 import { ProductList } from '../../components/ProductList/ProductList';
+import { CategoryContext } from '../../context/CategoryContext';
+import { filterProductsByCategory } from '../../utils/filterHelper';
 
 export const ProductsPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setLoading] = useState(true);
-  const [errorType, setErrorType] = useState(ErrorType.NOT_FOUND);
+  const [errorType, setErrorType] = useState(ErrorType.PRODUCT_NOT_FOUND);
   const { selectedCategory } = useContext(CategoryContext);
 
   useEffect(() => {

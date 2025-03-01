@@ -20,16 +20,25 @@
 
   .previous, .next {
     cursor: pointer;
+    font-size: variables.$logo-size;
+    color: variables.$card-bg;
+    transition: variables.$animation-settings;
+
+    &:hover {
+      color: variables.$primary;
+    }
+  }
+
+  .disabled {
+    opacity: 0;
   }
 
   &__item {
     background-color: variables.$card-bg;
     border-radius: 100%;
-    width: variables.$icon-size;
-    height: variables.$icon-size;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: variables.$mid-icon-size;
+    height: variables.$mid-icon-size;
+ 
     box-sizing: border-box;
     border: variables.$border-thickness solid transparent;
     transition: variables.$animation-settings;
@@ -37,6 +46,13 @@
     &:hover {
       border: variables.$border-thickness solid variables.$primary;
       cursor: pointer;
+    }
+
+    & a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
     }
   }
 
